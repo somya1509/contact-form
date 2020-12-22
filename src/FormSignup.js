@@ -8,7 +8,7 @@ import './Form.css'
  **/
 
 const FormSignUp = (submitForm) => {
-  const { handleChange, handleSubmit, values, error } = useForm(validateInfo, submitForm);
+  const { handleChange, handleSubmit, values, errors } = useForm(validateInfo, submitForm);
 
   return (
     <div className="form-content-right">
@@ -29,7 +29,7 @@ const FormSignUp = (submitForm) => {
             value={values.username}
             onChange={handleChange}
           />
-          {error.username && <p>{error.username}</p>}
+          {errors.username && <p>{errors.username}</p>}
         </div>
         <div className="form-inputs">
           <label htmlFor="email" className="form-label">
@@ -44,7 +44,7 @@ const FormSignUp = (submitForm) => {
             value={values.email}
             onChange={handleChange}
           />
-          {error.email && <p>{error.email}</p>}
+          {errors.email && <p>{errors.email}</p>}
         </div>
         <div className="form-inputs">
           <label htmlFor="password" className="form-label">
@@ -59,7 +59,7 @@ const FormSignUp = (submitForm) => {
             value={values.password}
             onChange={handleChange}
           />
-          {error.password && <p>{error.password}</p>}
+          {errors.password && <p>{errors.password}</p>}
         </div>
         <div className="form-inputs">
           <label htmlFor="password2" className="form-label">
@@ -74,7 +74,7 @@ const FormSignUp = (submitForm) => {
             value={values.password2}
             onChange={handleChange}
           />
-          {error.password2 && <p>{error.password2}</p>}
+          {errors.password2 && <p>{errors.password2}</p>}
         </div>
         <button className="form-input-btn" type="submit">
           Submit
